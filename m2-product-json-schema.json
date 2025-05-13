@@ -1,0 +1,94 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "sku": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "attribute_set_id": {
+            "type": "integer"
+        },
+        "price": {
+            "type": "integer"
+        },
+        "status": {
+            "type": "integer"
+        },
+        "visibility": {
+            "type": "integer"
+        },
+        "type_id": {
+            "type": "string"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "updated_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "extension_attributes": {
+            "$ref": "#/definitions/Extension_attributes"
+        },
+        "product_links": {
+            "type": "array",
+            "items": {
+            }
+        },
+        "options": {
+            "type": "array",
+            "items": {
+            }
+        },
+        "media_gallery_entries": {
+            "type": "array",
+            "items": {
+            }
+        },
+        "tier_prices": {
+            "type": "array",
+            "items": {
+            }
+        },
+        "custom_attributes": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Custom_attribute"
+            }
+        }
+    },
+    "definitions": {
+        "Extension_attributes": {
+            "type": "object",
+            "properties": {
+                "website_ids": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Website_id"
+                    }
+                }
+            }
+        },
+        "Website_id": {
+            "type": "integer"
+        },
+        "Custom_attribute": {
+            "type": "object",
+            "properties": {
+                "attribute_code": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
