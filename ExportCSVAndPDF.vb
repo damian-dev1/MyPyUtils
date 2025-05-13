@@ -32,14 +32,17 @@ End Sub
 
 ' Function to prompt the user for the CSV file path
 Function GetCSVFilePath() As String
-    Dim fileDialog As FileDialog
-    Set fileDialog = Application.FileDialog(msoFileDialogSaveAs)
+    Dim fileDialog As fileDialog
+    Set fileDialog = Application.fileDialog(msoFileDialogSaveAs)
+    fileDialog.Title = "Save As CSV File"
+
+    ' Set default filename suggestion
+    fileDialog.InitialFileName = ThisWorkbook.Path & "\Sheet_" & GetDateTimeString() & ".csv"
     
-    ' Set default extension to .csv
-    fileDialog.FilterIndex = 6
-    fileDialog.DefaultFilePath = Application.DefaultFilePath & "\Sheet.csv"
     
-    ' Show the file dialog
+    ' fileDialog.Filters.Clear
+    ' fileDialog.Filters.Add "CSV Files", "*.csv"
+    
     If fileDialog.Show = -1 Then
         GetCSVFilePath = fileDialog.SelectedItems(1)
     Else
@@ -47,22 +50,25 @@ Function GetCSVFilePath() As String
     End If
 End Function
 
-' Function to prompt the user for the PDF file path
+
 Function GetPDFFilePath() As String
-    Dim fileDialog As FileDialog
-    Set fileDialog = Application.FileDialog(msoFileDialogSaveAs)
+    Dim fileDialog As fileDialog
+    Set fileDialog = Application.fileDialog(msoFileDialogSaveAs)
     
-    ' Set default extension to .pdf
-    fileDialog.FilterIndex = 15
-    fileDialog.DefaultFilePath = Application.DefaultFilePath & "\Sheet.pdf"
+    ' Set default filename suggestion
+    fileDialog.InitialFileName = ThisWorkbook.Path & "\Sheet_" & GetDateTimeString() & ".pdf"
     
-    ' Show the file dialog
+    ' Set file filter to PDF
+    ' fileDialog.Filters.Clear
+    ' fileDialog.Filters.Add "PDF Files", "*.pdf"
+    
     If fileDialog.Show = -1 Then
         GetPDFFilePath = fileDialog.SelectedItems(1)
     Else
         GetPDFFilePath = ""
     End If
 End Function
+
 
 ' Procedure to export the current sheet as a CSV file
 Sub ExportSheetAsCSV(ByVal ws As Worksheet, ByVal filePath As String)
@@ -71,7 +77,7 @@ Sub ExportSheetAsCSV(ByVal ws As Worksheet, ByVal filePath As String)
     
     Application.ScreenUpdating = False
     Application.DisplayAlerts = False
-    ws.SaveAs fileName:=filePath, FileFormat:=xlCSV
+    ws.SaveAs Filename:=filePath, FileFormat:=xlCSV
     Application.DisplayAlerts = True
     Application.ScreenUpdating = True
     
@@ -163,3 +169,4 @@ Function FormatCSVData(ByVal cellValue As String) As String
     End If
     FormatCSVData = cellValue
 End Function
+
