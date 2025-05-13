@@ -1,0 +1,360 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "required": [
+        "$schema",
+        "definitions",
+        "properties",
+        "type"
+    ],
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "properties": {
+            "type": "object",
+            "required": [
+                "attribute_set_id",
+                "created_at",
+                "custom_attributes",
+                "extension_attributes",
+                "id",
+                "media_gallery_entries",
+                "name",
+                "options",
+                "price",
+                "product_links",
+                "sku",
+                "status",
+                "tier_prices",
+                "type_id",
+                "updated_at",
+                "visibility"
+            ],
+            "properties": {
+                "id": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "sku": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "name": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "attribute_set_id": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "price": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "status": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "visibility": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type_id": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "created_at": {
+                    "type": "object",
+                    "required": [
+                        "format",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "format": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "updated_at": {
+                    "type": "object",
+                    "required": [
+                        "format",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "format": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "extension_attributes": {
+                    "type": "object",
+                    "required": [
+                        "$ref"
+                    ],
+                    "properties": {
+                        "$ref": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "product_links": {
+                    "type": "object",
+                    "required": [
+                        "items",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                },
+                "options": {
+                    "type": "object",
+                    "required": [
+                        "items",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                },
+                "media_gallery_entries": {
+                    "type": "object",
+                    "required": [
+                        "items",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                },
+                "tier_prices": {
+                    "type": "object",
+                    "required": [
+                        "items",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                },
+                "custom_attributes": {
+                    "type": "object",
+                    "required": [
+                        "items",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "$ref"
+                            ],
+                            "properties": {
+                                "$ref": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "definitions": {
+            "type": "object",
+            "required": [
+                "Custom_attribute",
+                "Extension_attributes",
+                "Website_id"
+            ],
+            "properties": {
+                "Extension_attributes": {
+                    "type": "object",
+                    "required": [
+                        "properties",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "properties": {
+                            "type": "object",
+                            "required": [
+                                "website_ids"
+                            ],
+                            "properties": {
+                                "website_ids": {
+                                    "type": "object",
+                                    "required": [
+                                        "items",
+                                        "type"
+                                    ],
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "items": {
+                                            "type": "object",
+                                            "required": [
+                                                "$ref"
+                                            ],
+                                            "properties": {
+                                                "$ref": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "Website_id": {
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "Custom_attribute": {
+                    "type": "object",
+                    "required": [
+                        "properties",
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "properties": {
+                            "type": "object",
+                            "required": [
+                                "attribute_code",
+                                "value"
+                            ],
+                            "properties": {
+                                "attribute_code": {
+                                    "type": "object",
+                                    "required": [
+                                        "type"
+                                    ],
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "value": {
+                                    "type": "object",
+                                    "required": [
+                                        "type"
+                                    ],
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
