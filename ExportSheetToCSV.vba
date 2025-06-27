@@ -22,11 +22,6 @@ Sub ExportSheetToCSV()
         Exit Sub
     End If
     
-    ' Confirm if user wants to continue
-    response = MsgBox("Export active sheet '" & ws.Name & "' to CSV?", vbYesNo + vbQuestion, "Confirm Export")
-    If response = vbNo Then Exit Sub
-    
-    ' Get range to export
     lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
     lastCol = ws.Cells(1, ws.Columns.Count).End(xlToLeft).Column
     
@@ -48,15 +43,12 @@ Sub ExportSheetToCSV()
         Exit Sub
     End If
     
-    ' Create file
     fileNum = FreeFile
     Open csvFilePath For Output As #fileNum
     
-    ' Loop through each row
     For rowNum = 1 To rng.Rows.Count
         lineContent = ""
         
-        ' Build line for current row
         For colNum = 1 To rng.Columns.Count
             cellValue = rng.Cells(rowNum, colNum).Text
             
@@ -76,11 +68,9 @@ Sub ExportSheetToCSV()
             End If
         Next colNum
         
-        ' Write line to file
         Print #fileNum, lineContent
     Next rowNum
     
-    ' Close file
     Close #fileNum
     
     MsgBox "Export successful!" & vbCrLf & "File saved at: " & csvFilePath, vbInformation
