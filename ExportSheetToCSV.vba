@@ -15,7 +15,6 @@ Sub ExportSheetToCSV()
 
     On Error GoTo ErrorHandler
     
-    ' Select worksheet
     Set ws = ActiveSheet
     If ws Is Nothing Then
         MsgBox "No active sheet found!", vbCritical
@@ -32,7 +31,6 @@ Sub ExportSheetToCSV()
     
     Set rng = ws.Range(ws.Cells(1, 1), ws.Cells(lastRow, lastCol))
     
-    ' Prompt user for save location
     csvFilePath = Application.GetSaveAsFilename( _
         InitialFileName:=ws.Name & ".csv", _
         FileFilter:="CSV Files (*.csv), *.csv", _
